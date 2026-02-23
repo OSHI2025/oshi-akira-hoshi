@@ -1,0 +1,150 @@
+body {
+    margin:0;
+    font-family:'Montserrat', sans-serif;
+    background:#0d0d0d;
+    color:#fff;
+}
+
+header {
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+    background:#000;
+    position:fixed;
+    width:100%;
+    z-index:1000;
+}
+
+.logo {
+    font-family:'Playfair Display', serif;
+    font-size:24px;
+    color:gold;
+}
+.logo {
+    display:flex;
+    align-items:center;
+}
+
+.logo-img {
+    height:70px;
+    transition: all 0.4s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(212,175,55,0.6));
+}
+
+nav a, nav button {
+    margin-left:20px;
+    color:white;
+    text-decoration:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+.hero {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:url('../images/cat1.jpg') center/cover no-repeat;
+    text-align:center;
+}
+
+.hero h1 {
+    font-size:48px;
+    font-family:'Playfair Display';
+    color:gold;
+}
+
+section {
+    padding:100px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.cards {
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.card {
+    flex:1 1 300px;
+    background:#111;
+    padding:20px;
+}
+
+.card img {
+    width:100%;
+}
+
+.gallery img {
+    width:200px;
+    margin:10px;
+    cursor:pointer;
+}
+
+#lightboxModal {
+    display:none;
+    position:fixed;
+    background:rgba(0,0,0,0.9);
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    justify-content:center;
+    align-items:center;
+}
+
+#lightboxModal img {
+    max-width:90%;
+}
+
+#close {
+    position:absolute;
+    top:20px;
+    right:40px;
+    font-size:40px;
+    cursor:pointer;
+}
+
+footer {
+    background:#000;
+    padding:20px;
+    text-align:center;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    header {
+        flex-direction:column;
+        align-items:center;
+    }
+    .hero h1 {
+        font-size:32px;
+    }
+}
+/* ===== MOBILE ADAPTATION ===== */
+@media (max-width: 768px) {
+
+    .logo-img {
+        height: 50px;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+    
+    nav {
+        margin-top: 10px;
+    }
+}
+header {
+    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.7);
+}
+
