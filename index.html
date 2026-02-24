@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 
 <!-- GLightbox CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" integrity="sha512-zz6FyzFeN2Wx/0J8+NDrMkKzZ9Q4ok1i7f4r6n0MPTkWqknkqlRk8h+dp1U8Y8yo0F0dFRn7GkU+JY6l0Tr8YA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
 
 <style>
 body {
@@ -48,11 +48,13 @@ nav a {
 
 section {
   padding:60px 20px;
-  max-width:1200px;
+  max-width:1000px;
   margin:auto;
 }
 
-h1,h2 { margin-bottom:20px; }
+h1,h2 {
+  margin-bottom:20px;
+}
 
 .hero {
   text-align:center;
@@ -60,7 +62,29 @@ h1,h2 { margin-bottom:20px; }
   padding:100px 20px;
 }
 
-/* Премиум-сетка галереи */
+form input, form textarea {
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+}
+
+form button {
+  padding:10px 20px;
+  background:#000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+footer {
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+/* Премиум галерея */
 .gallery {
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -73,14 +97,6 @@ h1,h2 { margin-bottom:20px; }
   overflow: hidden;
   border-radius: 15px;
   border: 3px solid #000;
-  transform: translateY(50px);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.gallery-item.visible {
-  transform: translateY(0);
-  opacity:1;
 }
 
 .gallery-item img {
@@ -113,28 +129,6 @@ h1,h2 { margin-bottom:20px; }
 
 .gallery-item:hover .caption {
   opacity:1;
-}
-
-form input, form textarea {
-  width:100%;
-  padding:10px;
-  margin-bottom:15px;
-}
-
-form button {
-  padding:10px 20px;
-  background:#000;
-  color:#fff;
-  border:none;
-  cursor:pointer;
-}
-
-footer {
-  background:#000;
-  color:#fff;
-  text-align:center;
-  padding:20px;
-  margin-top:40px;
 }
 </style>
 </head>
@@ -177,6 +171,7 @@ OSHI-AKIRA-HOSHI — профессиональный питомник орие�
 Свяжитесь с нами, чтобы узнать о доступных котятах.
 </p>
 
+<!-- Премиум галерея -->
 <div class="gallery">
   <a href="images/kitten1.jpg" class="glightbox gallery-item" data-glightbox='{"title":"Котёнок 1","description":"Kitten 1"}'>
     <img src="images/kitten1.jpg" alt="Kitten 1">
@@ -195,12 +190,14 @@ OSHI-AKIRA-HOSHI — профессиональный питомник орие�
 
 <section id="contact">
 <h2 data-ru="Связаться с нами" data-en="Contact Us">Связаться с нами</h2>
+
 <form action="mailto:my_work_2025@bk.ru" method="post" enctype="text/plain">
 <input type="text" placeholder="Ваше имя" data-placeholder-ru="Ваше имя" data-placeholder-en="Your name">
 <input type="email" placeholder="Ваш Email" data-placeholder-ru="Ваш Email" data-placeholder-en="Your Email">
 <textarea placeholder="Ваше сообщение" data-placeholder-ru="Ваше сообщение" data-placeholder-en="Your message"></textarea>
 <button type="submit" data-ru="Отправить" data-en="Send">Отправить</button>
 </form>
+
 <p>Email: my_work_2025@bk.ru</p>
 </section>
 
@@ -208,10 +205,9 @@ OSHI-AKIRA-HOSHI — профессиональный питомник орие�
 <p>© 2026 OSHI-AKIRA-HOSHI | Samara, Russia</p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js" integrity="sha512-K+EEgXRRZ4Fh14L+/y4qIWB1k4i6oMjhtfATSlT0kA3GB0sh0jhH1Y9wlXcOOVCjUEhGl1eGDrHhXB1hH9hWZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+<!-- Скрипты -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
 <script>
-// Языковой переключатель и анимация галереи
 function setLanguage(lang) {
   localStorage.setItem("siteLanguage", lang);
   document.documentElement.lang = lang;
@@ -224,29 +220,20 @@ function setLanguage(lang) {
     el.placeholder = el.getAttribute("data-placeholder-" + lang);
   });
 
-  // Обновляем подписи галереи
   document.querySelectorAll('.caption').forEach(c => {
     c.textContent = c.getAttribute('data-' + lang);
   });
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  let savedLang = localStorage.getItem("siteLanguage");
-  if (!savedLang) savedLang = navigator.language.startsWith("ru") ? "ru" : "en";
+  let savedLang = localStorage.getItem("siteLanguage") || (navigator.language.startsWith("ru") ? "ru" : "en");
   setLanguage(savedLang);
 
-  // GLightbox
   const lightbox = GLightbox({ selector: '.glightbox' });
-
-  // Анимация появления изображений
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  galleryItems.forEach((item, i) => {
-    setTimeout(() => item.classList.add('visible'), i*150);
-  });
 });
 </script>
 
-<!-- Tawk.to -->
+<!-- Tawk.to Script -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -261,7 +248,6 @@ s0.parentNode.insertBefore(s1,s0);
 
 </body>
 </html>
-</body>
-</html>
+
 
 
