@@ -3,105 +3,210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Оши Акира Хоши | Oriental Cattery | Samara Russia</title>
-<link rel="preload" href="images/logo.svg" as="image">
-alt="Oshi Akira Hoshi Oriental Cat Breeder Samara Russia"
 
-<meta name="description" content="Питомник ориентальных кошек Оши Акира Хоши. Самара, Россия. Международный уровень разведения. Oriental kittens available worldwide.">
-<meta name="keywords" content="Oriental cats, Oriental kittens, cattery Russia, Samara, Ориентальные кошки, питомник Самара">
-<meta name="author" content="Oshi Akira Hoshi Cattery">
+<title>OSHI-AKIRA-HOSHI | Oriental Cattery Samara Russia</title>
 
-<link rel="stylesheet" href="css/style.css">
+<meta name="description" content="OSHI-AKIRA-HOSHI – Oriental cat cattery in Samara, Russia. Healthy purebred oriental kittens with pedigree.">
+<meta name="keywords" content="oriental cattery Samara, oriental kittens Russia, OSHI-AKIRA-HOSHI">
+<meta name="author" content="OSHI-AKIRA-HOSHI">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<meta property="og:title" content="OSHI-AKIRA-HOSHI Oriental Cattery">
+<meta property="og:description" content="Oriental kittens from Samara, Russia">
+<meta property="og:type" content="website">
 
-<!-- AOS Animation -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#fff;
+  color:#333;
+}
 
+header {
+  background:#000;
+  color:#fff;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav a {
+  color:#fff;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+.lang-switch button {
+  margin-left:5px;
+  padding:5px 10px;
+  cursor:pointer;
+}
+
+section {
+  padding:60px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+h1,h2 {
+  margin-bottom:20px;
+}
+
+.hero {
+  text-align:center;
+  background:#f4f4f4;
+  padding:100px 20px;
+}
+
+.gallery img {
+  width:100%;
+  max-width:300px;
+  margin:10px;
+}
+
+form input, form textarea {
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+}
+
+form button {
+  padding:10px 20px;
+  background:#000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+footer {
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <div class="logo">
-        <img src="images/logo.svg" alt="Oshi Akira Hoshi Oriental Cattery Samara Russia" class="logo-img">
-    </div>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#kittens">Kittens</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-        <button id="langToggle">RU / EN</button>
-    </nav>
+<div><strong>OSHI-AKIRA-HOSHI</strong></div>
+
+<nav>
+<a href="#home" data-ru="Главная" data-en="Home">Главная</a>
+<a href="#about" data-ru="О питомнике" data-en="About">О питомнике</a>
+<a href="#kittens" data-ru="Котята" data-en="Kittens">Котята</a>
+<a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a>
+</nav>
+
+<div class="lang-switch">
+<button onclick="setLanguage('ru')">RU</button>
+<button onclick="setLanguage('en')">EN</button>
+</div>
 </header>
 
-<section class="hero">
-    <h1>Elite Oriental Cattery</h1>
-    <p>Samara, Russia</p>
+<section id="home" class="hero">
+<h1 data-ru="Питомник ориентальных кошек"
+    data-en="Oriental Cat Cattery">
+Питомник ориентальных кошек
+</h1>
+
+<p data-ru="Самара, Россия"
+   data-en="Samara, Russia">
+Самара, Россия
+</p>
 </section>
 
-<section id="about" data-aos="fade-up">
-    <h2>О питомнике</h2>
-    <p>
-        Питомник ориентальных кошек международного уровня.
-        Разведение с любовью, генетическим контролем и европейскими стандартами.
-    </p>
+<section id="about">
+<h2 data-ru="О нас" data-en="About Us">О нас</h2>
+<p data-ru="OSHI-AKIRA-HOSHI — профессиональный питомник ориентальных кошек в Самаре."
+   data-en="OSHI-AKIRA-HOSHI is a professional oriental cat cattery located in Samara, Russia.">
+OSHI-AKIRA-HOSHI — профессиональный питомник ориентальных кошек в Самаре.
+</p>
 </section>
 
-<section id="kittens" data-aos="fade-up">
-    <h2>Kittens Available</h2>
-    <div class="cards">
-        <div class="card">
-            <img src="images/cat1.jpg" alt="Oriental kitten">
-            <h3>Akira</h3>
-        </div>
-        <div class="card">
-            <img src="images/cat2.jpg" alt="Oriental kitten">
-            <h3>Hoshi</h3>
-        </div>
-    </div>
+<section id="kittens">
+<h2 data-ru="Наши котята" data-en="Our Kittens">Наши котята</h2>
+<p data-ru="Свяжитесь с нами, чтобы узнать о доступных котятах."
+   data-en="Contact us to learn about available kittens.">
+Свяжитесь с нами, чтобы узнать о доступных котятах.
+</p>
 </section>
 
-<section id="gallery" data-aos="fade-up">
-    <h2>Gallery</h2>
-    <div class="gallery">
-        <img src="images/cat1.jpg" class="lightbox">
-        <img src="images/cat2.jpg" class="lightbox">
-    </div>
-</section>
+<section id="contact">
+<h2 data-ru="Связаться с нами" data-en="Contact Us">Связаться с нами</h2>
 
-<section id="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Email: info@oshiakira.com</p>
-    <p>Samara, Russia</p>
+<form action="mailto:my_work_2025@bk.ru" method="post" enctype="text/plain">
+<input type="text"
+placeholder="Ваше имя"
+data-placeholder-ru="Ваше имя"
+data-placeholder-en="Your name">
+
+<input type="email"
+placeholder="Ваш Email"
+data-placeholder-ru="Ваш Email"
+data-placeholder-en="Your Email">
+
+<textarea
+placeholder="Ваше сообщение"
+data-placeholder-ru="Ваше сообщение"
+data-placeholder-en="Your message"></textarea>
+
+<button type="submit"
+data-ru="Отправить"
+data-en="Send">
+Отправить
+</button>
+</form>
+
+<p>Email: my_work_2025@bk.ru</p>
 </section>
 
 <footer>
-    <p>© 2026 Oshi Akira Hoshi Cattery | Samara, Russia</p>
+<p>© 2026 OSHI-AKIRA-HOSHI | Samara, Russia</p>
 </footer>
 
-<!-- Lightbox -->
-<div id="lightboxModal">
-    <span id="close">&times;</span>
-    <img id="lightboxImg">
-</div>
-
-<!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="js/script.js"></script>
-
-<!-- Online Chat (Tawk.to example) -->
 <script>
+function setLanguage(lang) {
+  localStorage.setItem("siteLanguage", lang);
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-ru]").forEach(el => {
+    el.textContent = el.getAttribute("data-" + lang);
+  });
+
+  document.querySelectorAll("[data-placeholder-ru]").forEach(el => {
+    el.placeholder = el.getAttribute("data-placeholder-" + lang);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  let savedLang = localStorage.getItem("siteLanguage");
+
+  if (!savedLang) {
+    savedLang = navigator.language.startsWith("ru") ? "ru" : "en";
+  }
+
+  setLanguage(savedLang);
+});
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-var s1=document.createElement("script");
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
-s1.src='https://embed.tawk.to/YOUR_ID/default';
+s1.src='https://embed.tawk.to/699df31dafac601c36b7dad9/1ji8fraup';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
-document.body.appendChild(s1);
+s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
+<!--End of Tawk.to Script-->
 
 </body>
 </html>
+
