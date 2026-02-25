@@ -3,194 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Oshi Akira Hoshi | Элитный питомник ориентальных кошек | Самара</title>
-<meta name="description" content="Элитный питомник ориентальных кошек в Самаре. Породистые котята с родословной. Европейский премиум уровень.">
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
+<meta name="description" content="Элитный питомник ориентальных кошек в Самаре. Продажа породистых котят с документами и родословной. Контакты и каталог на сайте.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:'Montserrat',sans-serif;
-background:#0e0e12;
-color:#f5f5f5;
-overflow-x:hidden;
-cursor:none;
--webkit-user-select:none;
-user-select:none;
-}
-
-/* Header */
-header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:rgba(0,0,0,0.85);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-.logo{
-font-family:'Cormorant Garamond',serif;
-font-size:26px;
-letter-spacing:3px;
-color:#d4af37;
-}
-nav a{
-color:#fff;
-margin:0 12px;
-text-decoration:none;
-font-size:13px;
-letter-spacing:2px;
-transition:0.3s;
-}
+body{font-family:'Montserrat',sans-serif;background:#0c0c0f;color:#f5f5f5;-webkit-user-select:none;user-select:none;}
+header{position:fixed;width:100%;top:0;display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);z-index:1000;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:4px;color:#d4af37;}
+nav a{margin:0 15px;color:#fff;text-decoration:none;font-size:13px;letter-spacing:2px;transition:.3s;}
 nav a:hover{color:#d4af37}
-.lang button{
-margin-left:8px;
-padding:6px 12px;
-border:none;
-background:#d4af37;
-font-weight:600;
-cursor:pointer;
-}
-
-/* Hero */
-.hero{
-height:85vh;
-background:url("images/kitten1.jpg") center/cover fixed;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-}
-.hero:after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-}
-.hero-content{
-position:relative;
-z-index:2;
-}
-.hero h1{
-font-family:'Cormorant Garamond',serif;
-font-size:48px;
-color:#d4af37;
-}
-
-/* Sections */
-section{
-padding:120px 8%;
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-section.visible{
-opacity:1;
-transform:translateY(0);
-}
-h2{
-font-family:'Cormorant Garamond',serif;
-font-size:36px;
-color:#d4af37;
-text-align:center;
-margin-bottom:40px;
-}
-
-/* Grid */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-.card{
-background:#111;
-border-radius:15px;
-overflow:hidden;
-cursor:pointer;
-transition:0.4s;
-text-align:center;
-}
-.card img{
-width:100%;
-transition:0.5s;
-pointer-events:none;
-}
-.card:hover img{
-transform:scale(1.08);
-filter:brightness(60%);
-}
-.card h3{margin:15px 0}
-.status{
-display:inline-block;
-padding:6px 12px;
-margin-bottom:15px;
-background:#28a745;
-border-radius:6px;
-font-weight:600;
-}
-
-/* Modal */
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.95);
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-canvas{
-max-width:95%;
-max-height:95%;
-border-radius:15px;
-}
-
-/* Cursor */
-#cat-cursor{
-position:fixed;
-width:32px;
-height:32px;
-pointer-events:none;
-background:url('images/cat-paw.png') center center no-repeat;
-background-size:contain;
-transform:translate(-50%,-50%);
-z-index:10000;
-}
-
-/* Footer */
-footer{
-text-align:center;
-padding:40px;
-background:#000;
-font-size:13px;
-color:#aaa;
-}
-
-@media(max-width:768px){
-.hero h1{font-size:28px}
-header{flex-direction:column}
-}
+.lang button{margin-left:8px;padding:6px 12px;border:none;background:#d4af37;font-weight:600;cursor:pointer;}
+.hero{height:80vh;background:url("images/kitten1.jpg") center/cover fixed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;}
+.hero::after{content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.6);}
+.hero-content{position:relative;z-index:2;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:48px;letter-spacing:4px;color:#d4af37;}
+.hero p{margin-top:15px;font-size:18px;}
+section{padding:100px 10%;opacity:0;transform:translateY(40px);transition:all 1s ease;}
+section.visible{opacity:1;transform:translateY(0);}
+h2{font-family:'Cormorant Garamond',serif;font-size:36px;margin-bottom:30px;color:#d4af37;text-align:center;}
+p{text-align:center;max-width:800px;margin:auto;}
+.gallery-grid{margin-top:50px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.kitten-card{position:relative;overflow:hidden;border-radius:15px;background:#111;transition:0.4s;text-align:center;padding-bottom:20px;cursor:pointer;}
+.kitten-card img{width:100%;transition:0.5s;pointer-events:none;}
+.kitten-card:hover img{transform:scale(1.05);filter:brightness(60%);}
+.kitten-card h3{margin:15px 0 5px;}
+.status{display:inline-block;margin-top:5px;padding:5px 10px;border-radius:5px;font-weight:600;background:#28a745;color:#fff;}
+.button{display:inline-block;margin-top:10px;padding:10px 20px;background:#d4af37;color:#000;text-decoration:none;border-radius:5px;font-weight:600;transition:.3s;}
+.button:hover{background:#b8962f}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:9999;}
+canvas{max-width:95%;border-radius:15px;}
+footer{background:#000;padding:40px;text-align:center;font-size:13px;color:#aaa;}
+@media(max-width:768px){.hero h1{font-size:32px}header{flex-direction:column}nav{margin-top:10px}}
 </style>
 </head>
-
 <body oncontextmenu="return false">
 
 <header>
 <div class="logo">OSHI AKIRA HOSHI</div>
 <nav>
-<a href="#catalog" data-ru="КОТЯТА" data-en="KITTENS">КОТЯТА</a>
-<a href="#contacts" data-ru="КОНТАКТЫ" data-en="CONTACTS">КОНТАКТЫ</a>
+<a href="#about" data-ru="О ПИТОМНИКЕ" data-en="About Cattery">О ПИТОМНИКЕ</a>
+<a href="#catalog" data-ru="КОТЯТА" data-en="Kittens">КОТЯТА</a>
+<a href="#gallery" data-ru="ГАЛЕРЕЯ" data-en="Gallery">ГАЛЕРЕЯ</a>
+<a href="#pedigree" data-ru="РОДОСЛОВНАЯ" data-en="Pedigree">РОДОСЛОВНАЯ</a>
+<a href="#contacts" data-ru="КОНТАКТЫ" data-en="Contacts">КОНТАКТЫ</a>
 </nav>
 <div class="lang">
 <button onclick="setLang('ru')">RU</button>
@@ -201,110 +57,120 @@ header{flex-direction:column}
 <section class="hero">
 <div class="hero-content">
 <h1 data-ru="Элитный питомник ориентальных кошек" data-en="Elite Oriental Cat Cattery">Элитный питомник ориентальных кошек</h1>
+<p data-ru="Самара, Россия" data-en="Samara, Russia">Самара, Россия</p>
 </div>
+</section>
+
+<section id="about">
+<h2 data-ru="О питомнике" data-en="About the Cattery">О питомнике</h2>
+<p data-ru="Профессиональное разведение ориентальных кошек премиум-класса европейского уровня." data-en="Professional breeding of premium European oriental cats.">Профессиональное разведение ориентальных кошек премиум-класса европейского уровня.</p>
 </section>
 
 <section id="catalog">
 <h2 data-ru="Каталог котят" data-en="Kittens Catalog">Каталог котят</h2>
-<div class="grid" id="kittenGrid"></div>
+<div class="gallery-grid">
+<script>
+for(let i=1;i<=17;i++){
+let status=i<=3?`<span class="status">ДОСТУПЕН</span>`:"";
+document.write(`
+<div class="kitten-card" onclick="openModal('images/kitten${i}.jpg')">
+<img src="images/kitten${i}.jpg" alt="Котенок ориентальной породы">
+<h3>Котенок ${i}</h3>
+${status}
+</div>`);
+}
+</script>
+</div>
+</section>
+
+<section id="gallery">
+<h2 data-ru="Галерея" data-en="Gallery">Галерея</h2>
+<div class="gallery-grid">
+<script>
+for(let i=1;i<=17;i++){
+document.write(`<div class="kitten-card" onclick="openModal('images/kitten${i}.jpg')"><img src="images/kitten${i}.jpg" alt="Котенок"></div>`);
+}
+</script>
+</div>
+</section>
+
+<section id="pedigree">
+<h2 data-ru="Родословная" data-en="Pedigree">Родословная</h2>
+<p data-ru="Все котята имеют официальные документы и подтверждённую родословную." data-en="All kittens have official documents and verified pedigree.">Все котята имеют официальные документы и подтверждённую родословную.</p>
+<div style="text-align:center">
+<a href="contract.pdf" class="button" target="_blank" data-ru="Скачать договор (PDF)" data-en="Download Contract (PDF)">Скачать договор (PDF)</a>
+</div>
 </section>
 
 <section id="contacts">
 <h2 data-ru="Контакты" data-en="Contacts">Контакты</h2>
-<p style="text-align:center">Samara, Russia</p>
-<p style="text-align:center">Email: my_work_2025@bk.ru</p>
+<p data-ru="Самара, Россия" data-en="Samara, Russia">Самара, Россия</p>
+<p>Email: my_work_2025@bk.ru</p>
 </section>
 
 <footer>
-© 2026 Oshi Akira Hoshi | Luxury Oriental Cattery
+© 2026 Oshi Akira Hoshi | Luxury Oriental Cattery | Самара
 </footer>
 
 <div id="modal" class="modal" onclick="closeModal()">
 <canvas id="canvas"></canvas>
 </div>
 
-<div id="cat-cursor"></div>
-
 <script>
-/* Generate 17 kittens */
-const grid=document.getElementById("kittenGrid");
-for(let i=1;i<=17;i++){
-let status=i<=3?'<div class="status">ДОСТУПЕН</div>':'';
-grid.innerHTML+=`
-<div class="card" onclick="openModal('images/kitten${i}.jpg')">
-<img src="images/kitten${i}.jpg" alt="Ориентальный котенок ${i}">
-<h3>Kitten ${i}</h3>
-${status}
-</div>`;
-}
-
-/* Scroll animation */
+// Scroll reveal
 const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
 sections.forEach(sec=>{
-if(sec.getBoundingClientRect().top<window.innerHeight-100){
-sec.classList.add("visible");
-}
+const rect=sec.getBoundingClientRect();
+if(rect.top<window.innerHeight-100) sec.classList.add("visible");
 });
 });
 
-/* Modal with red watermark */
+// Modal with bold red watermark
 function openModal(src){
-const modal=document.getElementById("modal");
-const canvas=document.getElementById("canvas");
-const ctx=canvas.getContext("2d");
-const img=new Image();
-img.onload=function(){
-canvas.width=img.width;
-canvas.height=img.height;
-ctx.drawImage(img,0,0);
-ctx.save();
-ctx.translate(canvas.width/2,canvas.height/2);
-ctx.rotate(-Math.PI/6);
-ctx.font="bold 70px Montserrat";
-ctx.fillStyle="rgba(255,0,0,0.3)";
-ctx.textAlign="center";
-ctx.fillText("my_work_2025@bk.ru",0,0);
-ctx.restore();
-};
-img.src=src;
-modal.style.display="flex";
+  const modal=document.getElementById("modal");
+  const canvas=document.getElementById("canvas");
+  const ctx=canvas.getContext("2d");
+  const img=new Image();
+  img.crossOrigin="anonymous";
+  img.onload=function(){
+    canvas.width=img.width;
+    canvas.height=img.height;
+    ctx.drawImage(img,0,0);
+    ctx.save();
+    ctx.translate(canvas.width/2,canvas.height/2);
+    ctx.rotate(-Math.PI/6);
+    ctx.font="bold 60px Montserrat";
+    ctx.fillStyle="rgba(255,0,0,0.25)";
+    ctx.textAlign="center";
+    ctx.fillText("my_work_2025@bk.ru",0,0);
+    ctx.restore();
+  };
+  img.src=src;
+  modal.style.display="flex";
 }
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
+function closeModal(){document.getElementById("modal").style.display="none"}
 
-/* Protection */
+// Protection
 document.addEventListener("dragstart",e=>e.preventDefault());
 document.onkeydown=function(e){
 if(e.keyCode==123)return false;
 if(e.ctrlKey&&e.keyCode==83)return false;
 if(e.ctrlKey&&e.keyCode==85)return false;
 };
-document.addEventListener("copy",e=>e.preventDefault());
+document.addEventListener('copy',e=>e.preventDefault());
+document.addEventListener('cut',e=>e.preventDefault());
+document.addEventListener('contextmenu',e=>e.preventDefault());
 
-/* Language switch */
+// Language switch
 function setLang(lang){
 document.querySelectorAll("[data-ru]").forEach(el=>{
 el.textContent=el.getAttribute("data-"+lang);
 });
 }
-
-/* Animated cat cursor */
-const cursor=document.getElementById("cat-cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
-document.addEventListener("mousedown",()=>{
-cursor.style.transform="translate(-50%,-50%) scale(0.8)";
-});
-document.addEventListener("mouseup",()=>{
-cursor.style.transform="translate(-50%,-50%) scale(1)";
-});
 </script>
 
-<!-- Tawk.to Russian -->
+<!--Start of Tawk.to Script - Russian version-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -315,10 +181,11 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-Tawk_API.onLoad=function(){
-Tawk_API.setAttributes({'lang':'ru'},function(error){});
+Tawk_API.onLoad = function(){
+    Tawk_API.setAttributes({ 'lang': 'ru' }, function(error){});
 };
 </script>
+<!--End of Tawk.to Script-->
 
 </body>
 </html>
