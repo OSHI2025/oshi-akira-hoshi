@@ -3,132 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>OSHI-AKIRA-HOSHI | Oriental Cattery Samara Russia</title>
-
-<meta name="description" content="OSHI-AKIRA-HOSHI – Oriental cat cattery in Samara, Russia. Healthy purebred oriental kittens with pedigree.">
-<meta name="keywords" content="oriental cattery Samara, oriental kittens Russia, OSHI-AKIRA-HOSHI">
-<meta name="author" content="OSHI-AKIRA-HOSHI">
-
-<meta property="og:title" content="OSHI-AKIRA-HOSHI Oriental Cattery">
-<meta property="og:description" content="Oriental kittens from Samara, Russia">
-<meta property="og:type" content="website">
-
-<!-- GLightbox CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+<title>Галерея котят | Oshi Akira Hoshi</title>
 
 <style>
 body {
-  margin:0;
+  margin: 0;
   font-family: Arial, sans-serif;
-  background:#fff;
-  color:#333;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
 }
 
+/* Логотип */
 header {
-  background:#000;
-  color:#fff;
-  padding:15px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  padding: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: fadeInDown 1s ease;
 }
 
-nav a {
-  color:#fff;
-  margin:0 10px;
-  text-decoration:none;
+.logo {
+  font-size: 34px;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.lang-switch button {
-  margin-left:5px;
-  padding:5px 10px;
-  cursor:pointer;
-}
-
-section {
-  padding:60px 20px;
-  max-width:1000px;
-  margin:auto;
-}
-
-h1,h2 {
-  margin-bottom:20px;
-}
-
-.hero {
-  text-align:center;
-  background:#f4f4f4;
-  padding:100px 20px;
-}
-
-form input, form textarea {
-  width:100%;
-  padding:10px;
-  margin-bottom:15px;
-}
-
-form button {
-  padding:10px 20px;
-  background:#000;
-  color:#fff;
-  border:none;
-  cursor:pointer;
-}
-
-footer {
-  background:#000;
-  color:#fff;
-  text-align:center;
-  padding:20px;
-  margin-top:40px;
-}
-
-/* Премиум галерея */
+/* Галерея */
 .gallery {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap:20px;
-  margin-top:40px;
+  padding: 40px;
 }
 
-.gallery-item {
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+  user-select: none;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
   position: relative;
-  overflow: hidden;
+  max-width: 90%;
+  max-height: 90%;
+  animation: zoomIn 0.4s ease;
+}
+
+#modal-img {
+  width: 100%;
   border-radius: 15px;
-  border: 3px solid #000;
+  pointer-events: none;
 }
 
-.gallery-item img {
-  display:block;
-  width:100%;
-  height:auto;
-  border-radius: 15px;
-  transition: transform 0.3s;
+/* Диагональный водяной знак */
+.watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-30deg);
+  font-size: 40px;
+  font-weight: bold;
+  color: rgba(255,255,255,0.08);
+  pointer-events: none;
+  text-align: center;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
+/* Анимации */
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
 }
 
-.caption {
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  padding:10px;
-  background: rgba(0,0,0,0.6);
-  color:#fff;
-  font-size:16px;
-  text-align:center;
-  opacity:0;
-  transition: opacity 0.3s;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+@keyframes zoomIn {
+  from {transform:scale(0.7);}
+  to {transform:scale(1);}
 }
 
-.gallery-item:hover .caption {
-  opacity:1;
+@keyframes fadeInDown {
+  from {opacity:0; transform:translateY(-40px);}
+  to {opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -136,114 +123,51 @@ footer {
 <body>
 
 <header>
-<div><strong>OSHI-AKIRA-HOSHI</strong></div>
-
-<nav>
-<a href="#home" data-ru="Главная" data-en="Home">Главная</a>
-<a href="#about" data-ru="О питомнике" data-en="About">О питомнике</a>
-<a href="#kittens" data-ru="Котята" data-en="Kittens">Котята</a>
-<a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a>
-</nav>
-
-<div class="lang-switch">
-<button onclick="setLanguage('ru')">RU</button>
-<button onclick="setLanguage('en')">EN</button>
-</div>
+  <div class="logo">OSHI AKIRA HOSHI</div>
 </header>
 
-<section id="home" class="hero">
-<h1 data-ru="Питомник ориентальных кошек" data-en="Oriental Cat Cattery">Питомник ориентальных кошек</h1>
-<p data-ru="Самара, Россия" data-en="Samara, Russia">Самара, Россия</p>
+<section class="gallery">
+  <h2>🐱 Галерея котят</h2>
+  <div class="gallery-grid">
+    <!-- 17 фото -->
+    <script>
+      for(let i=1;i<=17;i++){
+        document.write('<img src="images/kitten'+i+'.jpg" onclick="openModal(this.src)" draggable="false">');
+      }
+    </script>
+  </div>
 </section>
 
-<section id="about">
-<h2 data-ru="О нас" data-en="About Us">О нас</h2>
-<p data-ru="OSHI-AKIRA-HOSHI — профессиональный питомник ориентальных кошек в Самаре."
-   data-en="OSHI-AKIRA-HOSHI is a professional oriental cat cattery located in Samara, Russia.">
-OSHI-AKIRA-HOSHI — профессиональный питомник ориентальных кошек в Самаре.
-</p>
-</section>
-
-<section id="kittens">
-<h2 data-ru="Наши котята" data-en="Our Kittens">Наши котята</h2>
-<p data-ru="Свяжитесь с нами, чтобы узнать о доступных котятах."
-   data-en="Contact us to learn about available kittens.">
-Свяжитесь с нами, чтобы узнать о доступных котятах.
-</p>
-
-<!-- Премиум галерея -->
-<div class="gallery">
-  <a href="images/kitten1.jpg" class="glightbox gallery-item" data-glightbox='{"title":"Котёнок 1","description":"Kitten 1"}'>
-    <img src="images/kitten1.jpg" alt="Kitten 1">
-    <div class="caption" data-ru="Котёнок 1" data-en="Kitten 1">Котёнок 1</div>
-  </a>
-  <a href="images/kitten2.jpg" class="glightbox gallery-item" data-glightbox='{"title":"Котёнок 2","description":"Kitten 2"}'>
-    <img src="images/kitten2.jpg" alt="Kitten 2">
-    <div class="caption" data-ru="Котёнок 2" data-en="Kitten 2">Котёнок 2</div>
-  </a>
-  <a href="images/kitten3.jpg" class="glightbox gallery-item" data-glightbox='{"title":"Котёнок 3","description":"Kitten 3"}'>
-    <img src="images/kitten3.jpg" alt="Kitten 3">
-    <div class="caption" data-ru="Котёнок 3" data-en="Kitten 3">Котёнок 3</div>
-  </a>
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-content">
+    <img id="modal-img">
+    <div class="watermark">
+      oshi2025.github.io/oshi-akira-hoshi
+    </div>
+  </div>
 </div>
-</section>
 
-<section id="contact">
-<h2 data-ru="Связаться с нами" data-en="Contact Us">Связаться с нами</h2>
-
-<form action="mailto:my_work_2025@bk.ru" method="post" enctype="text/plain">
-<input type="text" placeholder="Ваше имя" data-placeholder-ru="Ваше имя" data-placeholder-en="Your name">
-<input type="email" placeholder="Ваш Email" data-placeholder-ru="Ваш Email" data-placeholder-en="Your Email">
-<textarea placeholder="Ваше сообщение" data-placeholder-ru="Ваше сообщение" data-placeholder-en="Your message"></textarea>
-<button type="submit" data-ru="Отправить" data-en="Send">Отправить</button>
-</form>
-
-<p>Email: my_work_2025@bk.ru</p>
-</section>
-
-<footer>
-<p>© 2026 OSHI-AKIRA-HOSHI | Samara, Russia</p>
-</footer>
-
-<!-- Скрипты -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
 <script>
-function setLanguage(lang) {
-  localStorage.setItem("siteLanguage", lang);
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-ru]").forEach(el => {
-    el.textContent = el.getAttribute("data-" + lang);
-  });
-
-  document.querySelectorAll("[data-placeholder-ru]").forEach(el => {
-    el.placeholder = el.getAttribute("data-placeholder-" + lang);
-  });
-
-  document.querySelectorAll('.caption').forEach(c => {
-    c.textContent = c.getAttribute('data-' + lang);
-  });
+function openModal(src){
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("modal-img").src=src;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  let savedLang = localStorage.getItem("siteLanguage") || (navigator.language.startsWith("ru") ? "ru" : "en");
-  setLanguage(savedLang);
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
 
-  const lightbox = GLightbox({ selector: '.glightbox' });
-});
-</script>
+/* Защита */
+document.addEventListener("contextmenu", e => e.preventDefault());
 
-<!-- Tawk.to Script -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/699df31dafac601c36b7dad9/1ji8fraup';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+document.onkeydown = function(e) {
+  if (e.keyCode == 123) return false; // F12
+  if (e.ctrlKey && e.keyCode == 83) return false; // Ctrl+S
+  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+};
+
+/* Блокировка перетаскивания */
+document.addEventListener("dragstart", e => e.preventDefault());
 </script>
 
 </body>
