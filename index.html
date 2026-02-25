@@ -24,7 +24,7 @@ section.visible{opacity:1;transform:translateY(0);}
 h2{font-family:'Cormorant Garamond',serif;font-size:36px;margin-bottom:30px;color:#d4af37;text-align:center;}
 p{text-align:center;max-width:800px;margin:auto;}
 .gallery-grid{margin-top:50px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.kitten-card{position:relative;overflow:hidden;border-radius:15px;background:#111;transition:0.4s;text-align:center;padding-bottom:20px;}
+.kitten-card{position:relative;overflow:hidden;border-radius:15px;background:#111;transition:0.4s;text-align:center;padding-bottom:20px;cursor:pointer;}
 .kitten-card img{width:100%;transition:0.5s;pointer-events:none;}
 .kitten-card:hover img{transform:scale(1.05);filter:brightness(60%);}
 .kitten-card h3{margin:15px 0 5px;}
@@ -73,8 +73,8 @@ footer{background:#000;padding:40px;text-align:center;font-size:13px;color:#aaa;
 for(let i=1;i<=17;i++){
 let status=i<=3?`<span class="status">ДОСТУПЕН</span>`:"";
 document.write(`
-<div class="kitten-card">
-<img src="images/kitten${i}.jpg" alt="Котенок ориентальной породы" onclick="openModal(this.src)">
+<div class="kitten-card" onclick="openModal('images/kitten${i}.jpg')">
+<img src="images/kitten${i}.jpg" alt="Котенок ориентальной породы">
 <h3>Котенок ${i}</h3>
 ${status}
 </div>`);
@@ -88,7 +88,7 @@ ${status}
 <div class="gallery-grid">
 <script>
 for(let i=1;i<=17;i++){
-document.write(`<div class="kitten-card"><img src="images/kitten${i}.jpg" alt="Котенок" onclick="openModal(this.src)"></div>`);
+document.write(`<div class="kitten-card" onclick="openModal('images/kitten${i}.jpg')"><img src="images/kitten${i}.jpg" alt="Котенок"></div>`);
 }
 </script>
 </div>
@@ -128,23 +128,26 @@ if(rect.top<window.innerHeight-100) sec.classList.add("visible");
 
 // Modal with bold red watermark
 function openModal(src){
-const modal=document.getElementById("modal");
-const canvas=document.getElementById("canvas");
-const ctx=canvas.getContext("2d");
-const img=new Image();
-img.onload=function(){
-canvas.width=img.width;
-canvas.height=img.height;
-ctx.drawImage(img,0,0);
-ctx.font="bold 50px Montserrat";
-ctx.fillStyle="rgba(255,0,0,0.2)";
-ctx.translate(canvas.width/2,canvas.height/2);
-ctx.rotate(-Math.PI/6);
-ctx.textAlign="center";
-ctx.fillText("my_work_2025@bk.ru",0,0);
-};
-img.src=src;
-modal.style.display="flex";
+  const modal=document.getElementById("modal");
+  const canvas=document.getElementById("canvas");
+  const ctx=canvas.getContext("2d");
+  const img=new Image();
+  img.crossOrigin="anonymous";
+  img.onload=function(){
+    canvas.width=img.width;
+    canvas.height=img.height;
+    ctx.drawImage(img,0,0);
+    ctx.save();
+    ctx.translate(canvas.width/2,canvas.height/2);
+    ctx.rotate(-Math.PI/6);
+    ctx.font="bold 60px Montserrat";
+    ctx.fillStyle="rgba(255,0,0,0.25)";
+    ctx.textAlign="center";
+    ctx.fillText("my_work_2025@bk.ru",0,0);
+    ctx.restore();
+  };
+  img.src=src;
+  modal.style.display="flex";
 }
 function closeModal(){document.getElementById("modal").style.display="none"}
 
