@@ -28,11 +28,7 @@ p{text-align:center;max-width:800px;margin:auto;}
 .kitten-card img{width:100%;transition:0.5s;}
 .kitten-card:hover img{transform:scale(1.05);filter:brightness(60%);}
 .kitten-card h3{margin:15px 0 5px;}
-.kitten-card p{margin:5px 0;}
-.status{display:inline-block;margin-top:5px;padding:5px 10px;border-radius:5px;font-weight:600;}
-.available{background:#28a745;color:#fff;}
-.reserved{background:#ffc107;color:#000;}
-.sold{background:#dc3545;color:#fff;}
+.status{display:inline-block;margin-top:5px;padding:5px 10px;border-radius:5px;font-weight:600;background:#28a745;color:#fff;}
 .button{display:inline-block;margin-top:10px;padding:10px 20px;background:#d4af37;color:#000;text-decoration:none;border-radius:5px;font-weight:600;transition:.3s;}
 .button:hover{background:#b8962f}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:9999;}
@@ -46,11 +42,11 @@ footer{background:#000;padding:40px;text-align:center;font-size:13px;color:#aaa;
 <header>
 <div class="logo">OSHI AKIRA HOSHI</div>
 <nav>
-<a href="#about">О ПИТОМНИКЕ</a>
-<a href="#available">КОТЯТА</a>
-<a href="#gallery">ГАЛЕРЕЯ</a>
-<a href="#pedigree">РОДОСЛОВНАЯ</a>
-<a href="#contacts">КОНТАКТЫ</a>
+<a href="#about" data-ru="О ПИТОМНИКЕ" data-en="About Cattery">О ПИТОМНИКЕ</a>
+<a href="#catalog" data-ru="КОТЯТА" data-en="Kittens">КОТЯТА</a>
+<a href="#gallery" data-ru="ГАЛЕРЕЯ" data-en="Gallery">ГАЛЕРЕЯ</a>
+<a href="#pedigree" data-ru="РОДОСЛОВНАЯ" data-en="Pedigree">РОДОСЛОВНАЯ</a>
+<a href="#contacts" data-ru="КОНТАКТЫ" data-en="Contacts">КОНТАКТЫ</a>
 </nav>
 <div class="lang">
 <button onclick="setLang('ru')">RU</button>
@@ -60,48 +56,55 @@ footer{background:#000;padding:40px;text-align:center;font-size:13px;color:#aaa;
 
 <section class="hero">
 <div class="hero-content">
-<h1>Oriental Luxury Cattery</h1>
-<p>Самара, Россия</p>
+<h1 data-ru="Элитный питомник ориентальных кошек" data-en="Elite Oriental Cat Cattery">Элитный питомник ориентальных кошек</h1>
+<p data-ru="Самара, Россия" data-en="Samara, Russia">Самара, Россия</p>
 </div>
 </section>
 
 <section id="about">
-<h2>О питомнике</h2>
-<p>Профессиональное разведение ориентальных кошек премиум-класса европейского уровня.</p>
+<h2 data-ru="О питомнике" data-en="About the Cattery">О питомнике</h2>
+<p data-ru="Профессиональное разведение ориентальных кошек премиум-класса европейского уровня." data-en="Professional breeding of premium European oriental cats.">Профессиональное разведение ориентальных кошек премиум-класса европейского уровня.</p>
 </section>
 
-<section id="available">
-<h2>Каталог котят</h2>
+<section id="catalog">
+<h2 data-ru="Каталог котят" data-en="Kittens Catalog">Каталог котят</h2>
 <div class="gallery-grid">
 <script>
-const statuses = ["available","available","available","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved"];
 for(let i=1;i<=17;i++){
-let status=statuses[i-1];
-let text=status==="available"?"ДОСТУПЕН":"ЗАБРОНИРОВАН";
+let status=i<=3?`<span class="status">ДОСТУПЕН</span>`:"";
 document.write(`
 <div class="kitten-card">
 <img src="images/kitten${i}.jpg" alt="Котенок ориентальной породы" onclick="openModal(this.src)">
 <h3>Котенок ${i}</h3>
-<p>Цена: 50 000 ₽</p>
-<span class="status ${status}">${text}</span>
-<a href="mailto:my_work_2025@bk.ru" class="button">Связаться</a>
+${status}
 </div>`);
 }
 </script>
 </div>
 </section>
 
+<section id="gallery">
+<h2 data-ru="Галерея" data-en="Gallery">Галерея</h2>
+<div class="gallery-grid">
+<script>
+for(let i=1;i<=17;i++){
+document.write(`<div class="kitten-card"><img src="images/kitten${i}.jpg" alt="Котенок" onclick="openModal(this.src)"></div>`);
+}
+</script>
+</div>
+</section>
+
 <section id="pedigree">
-<h2>РОДОСЛОВНАЯ</h2>
-<p>Все котята имеют официальные документы и подтверждённую родословную.</p>
+<h2 data-ru="Родословная" data-en="Pedigree">Родословная</h2>
+<p data-ru="Все котята имеют официальные документы и подтверждённую родословную." data-en="All kittens have official documents and verified pedigree.">Все котята имеют официальные документы и подтверждённую родословную.</p>
 <div style="text-align:center">
-<a href="contract.pdf" class="button" target="_blank">Скачать договор (PDF)</a>
+<a href="contract.pdf" class="button" target="_blank" data-ru="Скачать договор (PDF)" data-en="Download Contract (PDF)">Скачать договор (PDF)</a>
 </div>
 </section>
 
 <section id="contacts">
-<h2>КОНТАКТЫ</h2>
-<p>Самара, Россия</p>
+<h2 data-ru="Контакты" data-en="Contacts">Контакты</h2>
+<p data-ru="Самара, Россия" data-en="Samara, Russia">Самара, Россия</p>
 <p>Email: my_work_2025@bk.ru</p>
 </section>
 
@@ -152,8 +155,15 @@ if(e.keyCode==123)return false;
 if(e.ctrlKey&&e.keyCode==83)return false;
 if(e.ctrlKey&&e.keyCode==85)return false;
 };
+document.addEventListener('copy',e=>e.preventDefault());
+document.addEventListener('cut',e=>e.preventDefault());
+document.addEventListener('contextmenu',e=>e.preventDefault());
+
+// Language switch
 function setLang(lang){
-alert("Мультиязычность можно расширить при необходимости");
+document.querySelectorAll("[data-ru]").forEach(el=>{
+el.textContent=el.getAttribute("data-"+lang);
+});
 }
 </script>
 
@@ -173,7 +183,6 @@ s0.parentNode.insertBefore(s1,s0);
 
 </body>
 </html>
-
 
 
 
